@@ -15,14 +15,17 @@ export class HeaderComponent {
 
   constructor(private appService: AppService) {}
 
+  resetInputs() {
+    this.passwordInout = '';
+    this.loginInput = '';
+  }
+
   onLogin() {
     if (this.passwordInout !== '1234' || this.loginInput !== 'miko') {
-      this.passwordInout = '';
-      this.loginInput = '';
+      this.resetInputs();
     }
     this.appService.isLogged = true;
     this.appService.fetchData();
-    this.passwordInout = '';
-    this.loginInput = '';
+    this.resetInputs();
   }
 }

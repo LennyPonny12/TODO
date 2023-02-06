@@ -2,6 +2,7 @@ import {
   ChangeDetectorRef,
   Component,
   ElementRef,
+  OnInit,
   Renderer2,
   ViewChild,
 } from '@angular/core';
@@ -12,35 +13,38 @@ import { AppService } from '../app.service';
   templateUrl: './new-task.component.html',
   styleUrls: ['./new-task.component.scss'],
 })
-export class NewTaskComponent {
+export class NewTaskComponent implements OnInit {
   @ViewChild('taskBody', { static: false }) container: ElementRef;
   @ViewChild('nameInput') inputName: ElementRef;
   @ViewChild('descInput') inputDesc: ElementRef;
 
-  active = false;
-  edit = false;
-  id;
+  active: boolean = false;
+  edit: boolean = false;
+  id: number;
   targetColor;
 
   constructor(
     private rendere: Renderer2,
     private service: AppService,
     private changeDetector: ChangeDetectorRef
-  ) {
-    service.edited.subscribe((data) => {
+  ) {}
+
+  ngOnInit(): void {
+    this.service.edited.subscribe((data) => {
       this.onEdit(data);
     });
   }
 
-  onAddStatus() {
+  onActive() {
     this.rendere.addClass(this.container.nativeElement, 'expand');
     this.active = true;
     this.edit = false;
   }
 
-  back() {
+  onLeave() {
     this.targetColor = '';
     this.active = false;
+    this.edit = false;
     this.rendere.removeClass(this.container.nativeElement, 'expand');
   }
 
@@ -55,7 +59,6 @@ export class NewTaskComponent {
       if (this.targetColor.classList.contains('cancelColor')) {
         return;
       }
-
       this.targetColor.classList.add('selected');
     }
   }
@@ -93,7 +96,7 @@ export class NewTaskComponent {
 
     this.service.saveTasks();
 
-    this.back();
+    this.onLeave();
   }
 
   onEdit(data) {
@@ -101,7 +104,7 @@ export class NewTaskComponent {
       el.classList.remove('selected');
     });
 
-    this.onAddStatus();
+    this.onActive();
     this.edit = true;
     this.changeDetector.detectChanges();
     this.id = data.id;
