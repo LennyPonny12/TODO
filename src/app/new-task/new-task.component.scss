@@ -1,0 +1,138 @@
+.newTaskBody{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px dashed #333;
+  padding: 2rem;
+  margin-top: 3rem;
+  border-radius: 2px;
+  opacity: 0.5;
+  height: 7.4rem;
+  transition: height 0.3s;
+  position: relative;
+}
+
+.icon{
+  height: 3rem;
+  stroke: #333;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.text{
+  font-size: 1.8rem;
+  width: 100%;
+}
+
+.textInputContainer{
+  user-select: none;
+  flex: 1 1;
+}
+
+.expand{
+  height: 17em;
+  transition: height 0.3s;
+}
+
+.before{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.after{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem 0;
+  position: relative;
+  gap: 3rem;
+}
+
+.inputAfterContainer{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.textAfter{
+  font-size: 1.8rem;
+}
+
+.inputAfter{
+  width: 80%;
+}
+
+.final{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.colorBoxContainer{
+  display: flex;
+  gap: 1rem;
+}
+
+.colorBox{
+  width: 2rem;
+  height: 2rem;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.red{
+  background-color: rgb(221, 23, 23);
+}
+
+.lightblue{
+  background-color: rgb(34, 34, 221);
+}
+
+.green{
+  background-color: rgb(13, 156, 13);
+}
+
+.yellow{
+  background-color: rgb(247, 247, 12);
+}
+
+.addIcon{
+  height: 2.5rem;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.selected{
+  border: 2px solid #000  ;
+}
+
+.cancelColor{
+  height: 2rem;
+}
+
+.exit{
+  height: 1.55rem;
+  position: absolute;
+
+  &:hover{
+    cursor: pointer;
+  }
+
+  top: -5%;
+  right: 0;
+}

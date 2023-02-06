@@ -1,0 +1,96 @@
+.nav{
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 4rem;
+  border-bottom: 1px solid #333;
+}
+
+.logoContainer{
+  user-select: none;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  color: #000;
+  display: flex;
+  align-items: center;
+}
+
+.loginContainer{
+  display: flex;
+  user-select: none;
+  gap: 2.5rem;
+  justify-content: flex-end;
+  flex: 20%;
+}
+
+.inputContainerLogin{
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn{
+  margin-left: 4rem;
+  padding: 1rem 4rem;
+  border: 1px solid #fff;
+  background-color: #111;
+  color: #fff;
+  border-radius: 2px;
+  transition: all 0.2s;
+
+  &:hover{
+    background-color: transparent;
+    border-color: #000;
+    color: #333;
+    cursor: pointer;
+  }
+}
+
+label:hover{
+  cursor: pointer;
+}
+
+@media (max-width: 54em){
+  .logoContainer{
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .loginContainer{
+    width: 90%;
+    justify-content: center;
+  }
+
+  .nav{
+    padding: 10px;
+  }
+
+  .logoContainer{
+    display: none;
+  }
+}
+
+//720
+@media (max-width: 45em) {
+  .loginContainer{
+    gap: 1rem;
+  }
+
+  .input{
+    width: 100%;
+  }
+
+}
+
+//500
+@media (max-width: 31em) {
+.btn{
+  padding: 5px 2.5rem;
+  font-size: 1.6rem;
+  margin-left: 2rem;
+}
+
+label{
+  font-size: 1.4rem;
+}
+}

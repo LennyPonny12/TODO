@@ -1,0 +1,93 @@
+.taskBody{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #333;
+  padding: 2rem;
+  margin: -1px 0 0 -1px;
+  border-radius: 2px;
+  position: relative;
+  z-index: 100;
+}
+
+.icon{
+  height: 4rem;
+}
+
+.stroke{
+  stroke: #333;
+}
+
+.text{
+  font-size: 1.8rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.desc{
+  font-size: 1.2rem;
+}
+
+.name{
+  font-size: 3rem;
+}
+
+.done{
+  color: #999;
+  text-decoration: line-through;
+}
+
+.editIcon, .deleteIcon{
+  height: 3rem;
+  stroke: #333;
+  transition: all 0.2s;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.editIcon{
+  transform: translate(0,-50%);
+}
+
+.deleteIcon{
+  transform: translate(0,-50%);
+}
+
+
+.editContainer, .deleteContainer{
+  height: 100%;
+  top: 50%;
+  position: absolute;
+}
+
+.editContainer{
+  left: -4%;
+}
+
+.deleteContainer{
+  right: -4%;
+}
+
+
+.editAnimationLeft{
+  transform: translate(2rem, -50%);
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.editAnimationRight{
+  opacity: 0;
+  transform: translate(-2rem, -50%);
+  transition: all 0.2s;
+}
+
+@media (max-width: 62em) {
+  .editAnimationLeft{
+    transform: translate(4rem, -50%);
+  }
+
+  .editAnimationRight{
+    transform: translate(-4rem, -50%);
+  }
+}

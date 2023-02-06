@@ -1,0 +1,7 @@
+<div class="container">
+  <h2 class="heading">TO DO LIST</h2>
+  <div class="taskList">
+    <app-task  *ngFor="let taskEl of tasks; let i = index" [task]="taskEl" [index]="i"></app-task>
+  </div>
+  <app-new-task></app-new-task>
+</div>

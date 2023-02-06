@@ -1,0 +1,18 @@
+.heading{
+  margin-top: 8rem;
+  font-size: 3rem;
+  padding: 4rem 0;
+}
+
+
+.container{
+  width: 60%;
+  margin: 0 auto;
+}
+
+
+@media (max-width: 53em) {
+  .container{
+    width: 80%;
+  }
+}

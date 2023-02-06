@@ -1,0 +1,19 @@
+<nav class="nav">
+  <div class="logoContainer">TODO LIST</div>
+  <div class="loginContainer">
+    <div class="inputContainerLogin">
+      <label for="login">Login</label>
+      <input class="input" [(ngModel)]="loginInput" type="text" id="login" />
+    </div>
+    <div class="inputContainerLogin">
+      <label for="password">Password</label>
+      <input
+        class="input"
+        [(ngModel)]="passwordInout"
+        type="text"
+        id="password"
+      />
+    </div>
+    <button (click)="onLogin()" class="btn">Log In</button>
+  </div>
+</nav>
